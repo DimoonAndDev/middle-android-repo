@@ -1,11 +1,9 @@
 package com.example.androidpracticumcustomview
 
+import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.widget.TextView
 import androidx.activity.ComponentActivity
-import com.example.androidpracticumcustomview.ui.theme.CustomContainer
+import androidx.appcompat.widget.AppCompatButton
 
 /*
 Задание:
@@ -15,6 +13,18 @@ import com.example.androidpracticumcustomview.ui.theme.CustomContainer
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        var composeButton = findViewById<AppCompatButton>(R.id.main_scr_comp_btn)
+        var xmlButton = findViewById<AppCompatButton>(R.id.main_scr_xml_btn)
+        composeButton.setOnClickListener {
+            var intent = Intent(this, ComposeActivity::class.java)
+            startActivity(intent)
+        }
+        xmlButton.setOnClickListener {
+            var intent = Intent(this, XmlActivity::class.java)
+            startActivity(intent)
+        }
+    }/*
         /*
         Раскомментируйте нужный вариант
          */
@@ -42,4 +52,4 @@ class MainActivity : ComponentActivity() {
             customContainer.addView(secondView)
         }, 2000)
     }
-}
+*/}
